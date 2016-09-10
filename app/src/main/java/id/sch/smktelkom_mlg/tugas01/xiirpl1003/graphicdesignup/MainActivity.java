@@ -8,7 +8,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity {
     CheckBox cbPS, cbAI, cbCD;
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Button bSU;
     TextView tvHasil;
     RadioGroup rgKelas;
+    Spinner spKelas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         bSU = (Button) findViewById(R.id.buttonSU);
         tvHasil = (TextView) findViewById(R.id.textViewHasil);
         rgKelas = (RadioGroup) findViewById(R.id.radioGroupKelas);
-
+        spKelas = (Spinner) findViewById(R.id.spinnerKelas);
         bSU.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 if (cbPS.isChecked()) hasilcb += cbPS.getText() + "\n";
                 if (hasilcb.length() == startlen) hasilcb += "Tidak ada Pilihan";
 
-                tvHasil.setText("Nama Anda: " + nama + "\nEmail Anda: " + email + "\nJenis Kelamin: " + hasil + hasilcb);
+                tvHasil.setText("Nama Anda: " + nama + "\n\nEmail Anda: " + email + "\n\nKelas: " + (spKelas.getSelectedItem().toString()) + "\n\nJenis Kelamin: " + hasil + hasilcb);
             }
 
 
@@ -74,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
         boolean valid = true;
         String nama = etNama.getText().toString();
         String email = etEmail.getText().toString();
+        final EditText emailval = (EditText) findViewById(R.id.editTextEmail);
+        String email2 = emailval.getText().toString().trim();
+        String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
 
         if (nama.isEmpty()) {
             etNama.setError("Nama Belum Diisi");
@@ -87,8 +94,8 @@ public class MainActivity extends AppCompatActivity {
         if (email.isEmpty()) {
             etEmail.setError("Email Anda Belum Diisi");
             valid = false;
-        } else if (!email.contains("" + "@" + "" + "." + "")) {
-            etEmail.setError("Email Anda Salah");
+        } else if (!email2.matches(emailpattern)) {
+            etEmail.setError("Silakan Cek Kembali Email Anda");
             valid = false;
         } else {
             etEmail.setError(null);

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="kelas">
+        <item>X RPL</item>
+        <item>X TKJ</item>
+        <item>XI RPL</item>
+        <item>XI TKJ</item>
+    </string-array>
+</resources>
