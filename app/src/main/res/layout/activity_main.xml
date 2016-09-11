@@ -17,10 +17,15 @@
         <TextView
             android:id="@+id/textViewTitle"
             style="@style/Base.TextAppearance.AppCompat.Headline"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/holo_green_light"
             android:text="GRAPHIC DESIGN TEAM"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
+            android:textColorHighlight="#000000"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textViewSubTitle"
@@ -65,7 +70,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Kelas" />
+            android:text="Kelas"
+            android:textSize="15dp"
+            android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/spinnerKelas"
@@ -78,7 +85,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Jenis Kelamin" />
+            android:text="Jenis Kelamin"
+            android:textSize="15dp"
+            android:textStyle="bold" />
 
         <RadioGroup
             android:id="@+id/radioGroupKelas"
@@ -105,7 +114,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Software yang Dikuasai" />
+            android:text="Software yang Dikuasai"
+            android:textSize="15dp"
+            android:textStyle="bold" />
 
         <CheckBox
             android:id="@+id/checkBoxPS"
@@ -130,11 +141,13 @@
 
         <Button
             android:id="@+id/buttonSU"
-            android:layout_width="wrap_content"
+            style="@style/Base.TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
             android:layout_marginTop="25dp"
-            android:text="Sign Up" />
+            android:background="@drawable/bgbtn"
+            android:text="Sign Up"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:id="@+id/textViewHasil"
@@ -142,6 +155,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:padding="15dp"
+            android:textSize="13dp"
+            android:textStyle="normal"
             tools:text="Hasil" />
     </LinearLayout>
 </ScrollView>

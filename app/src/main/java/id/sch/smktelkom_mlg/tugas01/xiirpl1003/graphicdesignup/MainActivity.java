@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 if (cbPS.isChecked()) hasilcb += cbPS.getText() + "\n";
                 if (hasilcb.length() == startlen) hasilcb += "Tidak ada Pilihan";
 
-                tvHasil.setText("Nama Anda: " + nama + "\n\nEmail Anda: " + email + "\n\nKelas: " + (spKelas.getSelectedItem().toString()) + "\n\nJenis Kelamin: " + hasil + hasilcb);
+                tvHasil.setText("Nama Anda: " + nama + "\n\nEmail Anda: " + email + "\n\nKelas: " + (spKelas.getSelectedItem().toString()) + "\n\nJenis Kelamin: " + hasil + "\n" + hasilcb);
             }
 
 
